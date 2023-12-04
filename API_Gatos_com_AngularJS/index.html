@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="js/app.js" defer></script>
+</head>
+
+<body ng-app="minhaAplicacao">
+    <div ng-controller="meuController" class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-6">
+                <div class="form-group">
+                    <label for="racaSelecionada">Raças</label>
+                    <select id="racaSelecionada" class="form-control" ng-options="raca.id as raca.name for raca in racas" ng-model="selectedRaca">
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-8 offset-sm-2">
+                <div id="imagens" class="mt-3">
+                    <img ng-src="{{ selectedImage.url }}" class="gato-imagem img-fluid" ng-show="selectedImage.url" />
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
